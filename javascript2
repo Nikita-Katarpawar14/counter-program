@@ -1,0 +1,32 @@
+let count = 0;
+
+const countLabel = document.getElementById("countLabel");
+const decreaseBtn = document.getElementById("decreaseBtn");
+const increaseBtn = document.getElementById("increaseBtn");
+const resetBtn = document.getElementById("resetBtn");
+
+decreaseBtn.onclick = () => {
+    count--;
+    updateDisplay();
+};
+
+increaseBtn.onclick = () => {
+    count++;
+    updateDisplay();
+};
+
+resetBtn.onclick = () => {
+    count = 0;
+    updateDisplay();
+};
+
+function updateDisplay() {
+    countLabel.textContent = count;
+    if (count > 0) {
+        countLabel.style.color = "#2ecc71"; // green
+    } else if (count < 0) {
+        countLabel.style.color = "#e74c3c"; // red
+    } else {
+        countLabel.style.color = "#333"; // neutral
+    }
+}
